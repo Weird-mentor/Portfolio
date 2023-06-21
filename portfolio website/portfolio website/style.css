@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
 
 :root{
-    --yellow:hsl(351, 100%, 50%);
-    --green:hsl(351, 100%, 50%);
+    --l:hsl(207, 97%, 51%);
+    --yellow:hsl(187, 88%, 52%);
+    --green:hsl(190, 96%, 53%);
     --hue:rgb(255, 255, 255);
     --red:#fff;
     --pink:#222;
@@ -22,27 +23,33 @@
     --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 }
-a:link {
-    color:var(--red);
+.contact .row .content .info h3 a:link {
+    color:var(--hue);
     background-color: transparent;
     text-decoration: none;
   }
-  a:visited {
-    color: pink;
+  .contact .row .content .info h3 a:visited {
+    color: var(--hue);
     background-color: transparent;
     text-decoration: none;
   }
-  a:hover {
+  .contact .row .content .info h3 a:hover {
     color: var(--p);
     background-color: transparent;
     text-decoration: none;
   }
-  a:active {
-    color: yellow;
+  .contact .row .content .info h3 a:active {
+    color: blue;
     background-color: transparent;
     text-decoration: none ;
   }
-  
+  .contact .row .content .info h3 .img{
+    border-radius: 25%;
+    flex:1 1 300rem;
+    display: flex;
+    
+  }
+
 *{
     font-family: 'Nunito', sans-serif;
     margin:0; padding:0;
@@ -79,6 +86,7 @@ body{
     background:#111;
     overflow-x: hidden;
     padding-left: 35rem;
+    
 }
 
 section{
@@ -99,6 +107,36 @@ section{
     column-gap: 2.5rem;
  
 }
+.btn1{
+    
+    background:#333;
+    color:#fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
+    transition: all 0.3s ease;
+    padding:1rem;
+    flex-wrap: wrap;
+    display: flex;
+    column-gap: 2rem;
+ 
+}
+
+.btn1:hover{
+    background:var(--yellow);
+    transform: scale(1.15);
+}
+.btn1 i{
+    padding:0 .5rem;
+    font-size: 1.8rem;
+   
+}
+
 .home .filters{
     justify-content:space-evenly;
     display: flex;
@@ -118,6 +156,16 @@ section{
     white-space: nowrap;
     
 }
+.animate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    z-index: 98;
+
+}
 .nav_btns{
     display: flex;
     align-items: center;
@@ -136,11 +184,11 @@ section{
 
 .btn:hover{
     background:var(--yellow);
-    
+    transform: scale(1.15);
 }
 .btn0:hover{
     background:var(--yellow);
-    
+    transform: scale(1.15);
 }
 
 .heading{
@@ -177,7 +225,9 @@ header .user img{
     object-fit: cover;
     margin-bottom: 1rem;
     border:.7rem solid var(--yellow); 
-
+}
+header .user img:hover{
+    transform: scale(1.15);
 }
 .header .profile container grid{
     row-gap: 2rem;
@@ -215,34 +265,33 @@ header .navbar i{
 }
 .change-theme:hover{
     color: var(--yellow);
+    transform: scale(1.15);
 }
-body.dark-theme{
-    --white:rgb(237, 216, 216);
-    --hue:rgb(0, 0, 0);
-    --red:rgb(1, 0, 1);
-    --hue-color: rgb(243, 165, 165);
-    --yellow:hsl(0, 0%, 0%);
-    --green:hsl(351, 100%, 50%);
-    background: rgb(232, 231, 231);
-    --title-color: hsl(var(--hue-color), 8%, 15%);
-    --pink:rgb(44, 42, 42);
-    --p:#fff;
-    
-    
-}
+
 
 header .navbar ul li a{
     display: block;
     padding:1rem;
-    margin:1.5rem 0;
-    background:var(--white);
+    margin:2rem ;
     color:var(--red);
     font-size: 2rem;
-    border-radius: 5rem;
+    border-radius:7rem;
+}
+header .navbar1 ul a{
+    margin: 1.3rem;
+    align-items: center;
+    font-size: 2.5rem;
+    color: var(--yellow);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+header .navbar1 ul a:hover{
+    font-size: 40px;
 }
 
 header .navbar ul li a:hover{
     background:var(--green);
+    transform: scale(1.2);
 }
 .profile_info{
     column-gap: 2.5rem;
@@ -277,44 +326,90 @@ header .navbar ul li a:hover{
 .home h3{
     font-size: 2.5rem;
     color:var(--hue);
+    text-align: center;
 }
 
 .home h1{
     font-size:5rem;
     color:var(--hue);
+    justify-content: center;
+    text-align: center;
 }
 
 .home h1 span{
+    position: relative;
     color:var(--green);
     font-family:'Clicker Script',cursive;
+}
+.home h1 span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:#111;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+    
 }
 .home p span{
     color:var(--green);
 }
 .home p{
+    position: relative;
     font-size:2rem;
     color:var(--hue);
     padding: 1rem 0;
+    text-align: center;
+}
+.home p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:#111;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2s;
+    
+}
+
+@keyframes showRight {
+    100%{
+        width: 0;
+    }
 }
 .about .row{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding:1rem 0;
+    padding:1rem 1rem;
 }
 
 .about .row .info{
     flex:1 1 48rem;
     padding:2rem 1rem;
-    padding-left: 6rem;
+    padding-left: 5rem;
 }
+.about .row  .info1_img{
+    
+    margin-right: 3rem;
+    border: 0.7rem solid var(--red);
+    
+}
+.about .row .info1_img:hover{
+    transform: scale(1.15);
+}
+
 .about .row .heading h1{
     color:var(--hue);
 }
 
 .about .row .info h3{
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: 'Times New Roman', Times, serif;
     color:var(--green);
     padding:1rem 0;
@@ -342,7 +437,9 @@ header .navbar ul li a:hover{
    width: 18%;
    
 }
-
+.counter .box:hover{
+    transform: scale(1.15);
+}
 .counter .box span{
     font-size:3rem;
     justify-content: center;
@@ -355,25 +452,56 @@ header .navbar ul li a:hover{
 }
 
 .education .skills{
-    align-items: center;
-    flex:0 0 40%;
+    flex: 1 1 40rem;
+    position: relative;
+    border: 0.1rem solid var(--yellow);
+    padding: .5rem 1.5rem;
     max-width: 70%;
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    transition: all 0.3s ease;
+}
+.education .skills .animate{
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(.3s * var(--i));
+
+}
+.education .skills:hover{
+    background: #02b1e130;
+}
+.education .skills .row{
+    flex: 1 1 40rem;
+}
+.education h3{
+    position: relative;
+    text-align: center;
+    font-size:27px;
+    color:var(--red);
+    padding: 1rem 0;
+}
+.education h3::before{ 
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:#111;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+    
 }
 
-.education .skills .skill-item{
-    align-items: center;
-    flex:0 0 100%;
-    max-width: 100%;
 
-}
 .education .skills .skill-item h5{
     align-items: center;
     line-height: 70px;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 27px;
     color: var(--yellow);
     text-transform: capitalize;
 
@@ -422,6 +550,10 @@ header .navbar ul li a:hover{
     border-radius: .5rem;
     margin-bottom: 12px;
 }
+.work_img:hover{
+    transform: scale(1.15);
+}
+
 .port{
     display: none;
 }
@@ -432,6 +564,9 @@ header .navbar ul li a:hover{
     align-items: center;
     column-gap: .25rem;
     cursor: pointer;
+}
+.work_btn:hover{
+    transform: scale(1.15);
 }
 .work_btn icon{
     font-size: 2rem;
@@ -469,25 +604,47 @@ header .navbar ul li a:hover{
     opacity: 0;
     
 }
+.details_description{
+    font-style: italic;
+    font-family:'Times New Roman', Times, serif
+}
+.port_popup-body .details_title{
+    font-size: 120%;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.port_popup-subtitle span{
+    align-items:center;
+}
+.details_info li{
+    font-size: 120%;
+    list-style:inside;   
+}
+.details_info span{
+    color: var(--red);
+}
 .port_popup.open{
     opacity: 1;
     visibility: visible;
 }
 .port_popup-inner{
+    color: var(--p);
     flex:1 1 4rem;
-    background-color: var(--green);
+    background-color:var(--l);
     width:350px;
     border-radius: 1rem;
     padding: 1rem;
     position: absolute;  
 
 }
-.port-popup-close{
-    position:absolute;
+
+.port_popup-close{
     top:1.5rem;
-    right:.5rem;
-    font-size: 1.5rem;
-    color: var(--hue);
+    right: 1rem;
+    position:absolute;
+    font-size: 2.5rem;
+    color: var(--p);
+    background-color: var(--hue);
     cursor: pointer;
 }
 .port_popup-content{
@@ -501,8 +658,8 @@ header .navbar ul li a:hover{
 }
 
 .port_popup-subtitle{
-    font-size: 200%;
-    margin-bottom: 20px;
+    font-size: 150%;
+    margin-bottom: 10px;
 }
 
 .worksection .work_container .work_card{
@@ -559,11 +716,13 @@ header .navbar ul li a:hover{
     height: 15rem;
     resize: none;
 }
-.contact .row .contact .info_img{
-    width: 12rem;
+.img1{
+
+    position: relative;
+    width: auto;
     display: flex;
-    margin-bottom: 2rem;
-    margin: 1rem 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact .row .content .title{
@@ -577,9 +736,11 @@ header .navbar ul li a:hover{
     background: var(--green);
     padding : 3rem;
     border-radius: 1rem;
-    
     bottom:10rem;
     grid-template-columns: repeat(2,max-content);
+}
+.contact .row .content .info li{
+    list-style: none;
 }
 .contact .row .content .info h3{
     display: flex;
@@ -589,6 +750,12 @@ header .navbar ul li a:hover{
     padding:1rem 0;
     font-weight: normal;
 }
+.contact .row .content .info h3 a{
+    color:var(--hue);
+    background-color: transparent;
+    text-decoration: none;
+}
+
 
 .contact .row .content .info h3 i{
     padding-right: 1rem;
@@ -603,28 +770,42 @@ header .navbar ul li a:hover{
 }
 
 .education1 .box-container{
+    margin-top: 40px;
     display: flex;
+    margin-right: 4rem;
+    margin-left: 4rem;;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     padding:1rem 0;
     padding-left: 3rem;
+    border: 0.1rem solid var(--yellow);
+    padding: .5rem 1.5rem;
 }
 
 .education1 .box-container .box{
     width:27rem;
+    height: 38rem;
+    position: relative;
+    border: 0.5rem solid var(--yellow);
+    padding: 1.5rem;
     margin:4rem 1rem;
     padding-left: 4rem;
     border-left: .2rem solid var(--hue);
-    position: relative;
+    
+}
+.education1 .box-container .box:hover{
+    transform: scale(1.15);
 }
 
 .education1 .box-container .box span{
     font-size: 1.3rem;
+    border: 0.1rem solid var(--yellow);
     background:#222;
     color:#fff;
     border-radius: 5rem;
     padding:.5rem 2.5rem;
+    
 }
 
 .education1 .box-container .box h3{
@@ -642,6 +823,7 @@ header .navbar ul li a:hover{
 .education1 .box-container .box i{
     position: absolute;
     top:-1.5rem; left:-2.5rem;
+    border: 0.1rem solid var(--yellow);
     height:5rem;
     width: 5rem;
     border-radius: 50%;
@@ -651,11 +833,6 @@ header .navbar ul li a:hover{
     color:var(--green);
     background:var(--hue);
 }
-
-
-
-
-
 
 
 
